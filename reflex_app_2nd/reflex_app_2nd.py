@@ -3,7 +3,7 @@
 import reflex as rx
 
 from rxconfig import config
-from . import ui, pages, navigation
+from . import ui, pages, navigation, chat_component
 
 class State(rx.State):
     """The app state."""
@@ -11,7 +11,7 @@ class State(rx.State):
     ...
 
 
-
 app = rx.App()
 app.add_page(pages.index, route=navigation.routes.HOME_ROUTE)
 app.add_page(pages.about_us,route=navigation.routes.ABOUT_US_ROUTE)
+app.add_page(chat_component.chat_page,route=navigation.routes.CHAT_ROUTE)

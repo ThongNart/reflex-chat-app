@@ -5,11 +5,14 @@ from .footer import base_footer
 
 def base_layout(*args, **kwargs) -> rx.Component:
     return rx.container (
+
         base_navbar(),
+
         rx.fragment(
             id="my-base-fragment",
             *args, 
             **kwargs,
             ),
+            
         base_footer()
     )

@@ -7,5 +7,13 @@ class NavState(rx.State):
         """
         on_click event
         """
-        print('clicked')
+        print('clicked home button')
         return rx.redirect(routes.HOME_ROUTE)
+    
+    def to_about_us(self):
+        print('clicked about button')
+        return rx.redirect(routes.ABOUT_US_ROUTE)
+    
+    def to_chat(self):
+        print('clicked chat button')
+        return rx.redirect(routes.CHAT_ROUTE)
