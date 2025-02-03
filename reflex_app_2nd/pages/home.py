@@ -8,8 +8,9 @@ from reflex_app_2nd import ui
 def index() -> rx.Component:
     # Welcome Page (Index)
     return ui.base_layout(
-        rx.color_mode.button(position="top-right"),
+        #x.color_mode.button(position="top-right"),
         rx.vstack(
+            rx.color_mode.button(position="bottom-right"),
             rx.heading("Welcome to Reflex ChatGPT !", size="9"),
             rx.text(
                 "Get started by editing ",
