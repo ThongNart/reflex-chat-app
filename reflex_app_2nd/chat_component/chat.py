@@ -1,5 +1,4 @@
 import reflex as rx
-
 from reflex_app_2nd import ui
 from .chat_form import chat_form
 from .chat_state import ChatMessage, ChatState
@@ -22,11 +21,11 @@ def message_box(chat_message: ChatMessage) -> rx.Component:
                     rx.color("mauve",4),
                     rx.color("blue",4)
                     ),
-                color=rx.cond(chat_message.is_bot, rx.color("mauve", 12), rx.color("blue",12)),
+                color=rx.cond(chat_message.is_bot, rx.color("crimson", 12), rx.color("cyan",12)),
                 **message_style,
             ),
-        text_align=rx.cond(chat_message.is_bot, "left", "right"),
-        margin_top="1em"
+            text_align=rx.cond(chat_message.is_bot, "left", "right"),
+            margin_top="1em"
         )
     )
 
@@ -35,11 +34,13 @@ def chat_page():
     return ui.base_layout (
         rx.vstack(
             rx.heading("Chat with AI", size="9"),
+            
             rx.box(
                 rx.foreach(ChatState.messages, message_box),
-                width='100%'
+                width='80%'
             ),
             chat_form(),
+
             margin="3rem auto", 
             spacing="5",
             justify="center",

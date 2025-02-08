@@ -16,7 +16,7 @@ def chat_form() -> rx.Component:
                 rx.button('Submit', type="submit"),
                 rx.cond(
                     ChatState.user_did_submit,
-                    rx.text("Successfully submited!!!!"),
+                    rx.text("AI is thinking ..."),
                     rx.fragment()
                     
                 )
