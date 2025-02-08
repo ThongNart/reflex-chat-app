@@ -37,7 +37,7 @@ def index() -> rx.Component:
                 is_external=True,
             ),
 
-
+            # Button to count up or down
             rx.hstack(
                 rx.button(
                     "Decrement",
