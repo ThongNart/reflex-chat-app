@@ -33,14 +33,15 @@ def message_box(chat_message: ChatMessage) -> rx.Component:
 def chat_page():
     return ui.base_layout (
         rx.vstack(
-            rx.heading("Chat with AI", size="9"),
-            
+            rx.hstack(
+                rx.heading("Chat with AI", size="9"),
+                rx.button(" + New Chat", on_click=ChatState.clear_and_start_new)
+            ),
             rx.box(
                 rx.foreach(ChatState.messages, message_box),
                 width='80%'
             ),
             chat_form(),
-
             margin="3rem auto", 
             spacing="5",
             justify="center",
